@@ -1,0 +1,19 @@
+.exit
+await timelock.hasRole(DEFAULT_ADMIN_ROLE, deployer)
+await timelock.hasRole(EXECUTOR_ROLE, ethers.constants.AddressZero)
+await timelock.hasRole(PROPOSER_ROLE, gov.address)
+const DEFAULT_ADMIN_ROLE = await timelock.DEFAULT_ADMIN_ROLE();
+const EXECUTOR_ROLE = await timelock.EXECUTOR_ROLE();
+const PROPOSER_ROLE = await timelock.PROPOSER_ROLE();
+await token.getVotes(deployer)
+const deployer = "0x637c48475bc7c9AF5C2001faF41Feb529364D112";
+await token.owner()
+const gov = await ethers.getContractAt("LOGEDAO","0xFFBd634C64A8F69D22E0CDec440AAbE732838388");
+const timelock = await ethers.getContractAt("TimelockController","0x802081F7583A7Edf183B9997b1b51f04A7e320a3");
+const token = await ethers.getContractAt("LOGEToken","0xF0BA8098500fB5727AE1A7E5484e7D44150239f7");
+.exit
+await ethers.provider.getBlockNumber()
+await ethers.provider.getNetwork()
+.exit
+(await ethers.provider.getBlockNumber())
+(await ethers.provider.getNetwork())
